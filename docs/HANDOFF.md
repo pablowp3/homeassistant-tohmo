@@ -24,27 +24,30 @@ The active session was suspended at zero power, which is still an active session
 
 ## Publication and validation status
 
-Source review is complete. The reviewer independently reran all 28 mocked tests
-and Python compilation successfully. Initial source was published to
-`pablowp3/homeassistant-tohmo` in commit
-`e4e5c7994eefd74d21fcd9eab9ab3b709697eeda`.
+The public repository `pablowp3/homeassistant-tohmo` and Marketplace installation
+are complete. The user explicitly authorized public visibility. Version 0.1.1
+was published in commit `36be3fa2622c0240f2db8e36ed4bd5354e2222f8` and downloaded
+through Marketplace. No credentials or personal account responses were published.
 
-The user subsequently authorized making the repository public so Marketplace can
-install it. The coordinator owns the visibility change and publication of these
-updated instructions. No credentials or personal account responses belong in
-the public repository. Preferred installation is Marketplace **Add from link**;
-manual copying remains a fallback.
+The native config flow, account authentication and cloud reads were verified on
+Home Assistant 2026.11.0 / Python 3.14.10. The initial deployment created 21 entities;
+the two firmware diagnostic sensors exposed a missing unit-attribute error.
+Version 0.1.1 initializes that unit to `None`. Its regression test reproduced both
+failures before the fix and passes afterward, while preserving the measured and
+currency units. The reviewer independently passed all 30 tests and compilation.
 
-## Remaining validation
+After the 0.1.1 restart, the integration loaded successfully and all 23 entities
+were present: 6 buttons, 2 numbers, 1 select, 9 sensors, 4 switches and 1 text.
+Units, current bounds, LED values and the existing active-but-suspended session
+were correct. Firmware version was available; firmware-update availability was
+unknown, as expected before an explicit check. No Tohmo errors remained in the
+system log after restart. No physical charger command was executed.
 
-1. Complete public visibility and documentation publication, then install through
-   Marketplace as an Integration from `https://github.com/pablowp3/homeassistant-tohmo`.
-2. Load on actual Home Assistant 2026.11, then enter account credentials in its
-   UI. The local tests do not install or emulate the complete Home Assistant core.
-3. Verify discovered entities and values against the mobile app. Check firmware
-   availability with the read-only check button if desired.
-4. Live writes remain untested. Any deliberate functional control test must be
-   explicitly authorized and should use an agreed reversible control first.
+## Untested operations
+
+The optional firmware-availability endpoint was not exercised during installation.
+Live writes remain untested. Any deliberate functional control test must be
+explicitly authorized and should use an agreed reversible control first.
 
 Do not claim a physical charging command worked merely because mocked tests or
 cloud discovery succeeded. A firmware check failure remains unknown rather than
@@ -55,7 +58,7 @@ being mislabeled "up to date"; the app itself conflates several failures here.
 Run the README commands. Tests cover concurrent token expiry, one read retry,
 no write retry, rate limiting, invalid credentials/expiry, request paths and
 payloads, numeric-vs-alphanumeric IDs, owner/tenant/hardware capability gates,
-current limits and active-but-suspended sessions.
+current limits, active-but-suspended sessions and diagnostic sensor units.
 
 On this Windows workspace, restricted execution stalls Python's asyncio loop
 even for `asyncio.sleep(0)`. Mock tests finish immediately outside that restriction.

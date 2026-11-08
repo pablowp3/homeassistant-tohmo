@@ -58,11 +58,19 @@ Firmware installation is explicit and blocked while a charging session is active
 
 ## Status and limits
 
-Initial version, developed for Home Assistant 2026.11. The account discovery and
-capability reads have succeeded. Automated tests cover request payloads, token
-renewal, error handling and capability validation without modifying the charger.
-Live start/stop/settings/firmware commands have not been tested yet. See
-[handoff](docs/HANDOFF.md) for the precise remaining validation.
+Version 0.1.1 is published and installed through Marketplace on Home Assistant
+2026.11.0 with Python 3.14.10. The native configuration flow, account sign-in and
+cloud data reads have been verified. All 23 entities loaded after the restart,
+with correct units and capability limits and no Tohmo errors in the system log.
+
+All 30 automated tests pass. Version 0.1.1 fixes an actual Home Assistant loading
+error in the two firmware diagnostic sensors: their unit is now explicitly empty.
+Regression tests reproduce the original error and verify the corrected metadata.
+Firmware-update availability remains unknown until its explicit check runs.
+
+Live start/stop/settings/firmware commands have not been tested. No physical
+charger operation was performed during installation or validation. See
+[handoff](docs/HANDOFF.md) for the precise validation status.
 
 This is an unofficial integration using an undocumented mobile API. Tohmo can
 change or withdraw that API. It is separate from the French customer website and
