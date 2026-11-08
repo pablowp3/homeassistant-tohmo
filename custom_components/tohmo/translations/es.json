@@ -1,0 +1,118 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tohmo",
+        "description": "Usa la cuenta de tu app Android de Tohmo. La contraseña se utiliza para iniciar sesión y no se guarda.",
+        "data": {
+          "username": "Correo electrónico",
+          "password": "Contraseña"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Volver a iniciar sesión",
+        "description": "Introduce la contraseña de la misma cuenta de Tohmo.",
+        "data": {
+          "password": "Contraseña"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "La cuenta o contraseña no es válida.",
+      "cannot_connect": "No se puede conectar con Tohmo.",
+      "no_chargers": "Esta cuenta no tiene cargadores personales."
+    },
+    "abort": {
+      "already_configured": "Esta cuenta ya está configurada.",
+      "reauth_successful": "Se ha iniciado sesión de nuevo.",
+      "wrong_account": "Utiliza la misma cuenta."
+    }
+  },
+  "entity": {
+    "switch": {
+      "charging": {
+        "name": "Sesión de carga"
+      },
+      "requires_authorization": {
+        "name": "Exigir autenticación"
+      },
+      "enable_keep_awake": {
+        "name": "Mantener vehículo despierto"
+      },
+      "connector_lock": {
+        "name": "Bloquear conector"
+      }
+    },
+    "number": {
+      "max_current_a": {
+        "name": "Corriente máxima de carga"
+      },
+      "min_charging_current": {
+        "name": "Corriente de mantenimiento"
+      }
+    },
+    "select": {
+      "light_intensity": {
+        "name": "Intensidad del LED"
+      }
+    },
+    "text": {
+      "name": {
+        "name": "Nombre del cargador"
+      }
+    },
+    "button": {
+      "reboot": {
+        "name": "Reiniciar cargador"
+      },
+      "start": {
+        "name": "Iniciar sesión de carga"
+      },
+      "stop": {
+        "name": "Detener sesión de carga"
+      },
+      "unlock": {
+        "name": "Desbloquear conector"
+      },
+      "firmware_check": {
+        "name": "Buscar actualización de firmware"
+      },
+      "firmware_install": {
+        "name": "Instalar actualización de firmware"
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "Estado del conector"
+      },
+      "power": {
+        "name": "Potencia de carga"
+      },
+      "energy": {
+        "name": "Energía de la sesión"
+      },
+      "duration": {
+        "name": "Duración de la sesión"
+      },
+      "amount": {
+        "name": "Coste de la sesión"
+      },
+      "session_status": {
+        "name": "Estado de la sesión"
+      },
+      "firmware_version": {
+        "name": "Versión de firmware"
+      },
+      "last_month_energy_kwh": {
+        "name": "Energía del mes anterior"
+      },
+      "firmware_update": {
+        "name": "Actualización de firmware",
+        "state": {
+          "available": "Disponible",
+          "installing": "Instalando"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tohmo",
+        "description": "Use your Tohmo Android app account. The password is used for sign-in and is not stored.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "description": "Enter the password for the same Tohmo account.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The account or password is invalid.",
+      "cannot_connect": "Cannot connect to Tohmo.",
+      "no_chargers": "This account has no personal chargers."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Reauthentication was successful.",
+      "wrong_account": "Use the same account."
+    }
+  },
+  "entity": {
+    "switch": {
+      "charging": {
+        "name": "Charging session"
+      },
+      "requires_authorization": {
+        "name": "Require authentication"
+      },
+      "enable_keep_awake": {
+        "name": "Keep vehicle awake"
+      },
+      "connector_lock": {
+        "name": "Lock connector"
+      }
+    },
+    "number": {
+      "max_current_a": {
+        "name": "Maximum charging current"
+      },
+      "min_charging_current": {
+        "name": "Keep-awake current"
+      }
+    },
+    "select": {
+      "light_intensity": {
+        "name": "LED intensity"
+      }
+    },
+    "text": {
+      "name": {
+        "name": "Charger name"
+      }
+    },
+    "button": {
+      "reboot": {
+        "name": "Restart charger"
+      },
+      "start": {
+        "name": "Start charging session"
+      },
+      "stop": {
+        "name": "Stop charging session"
+      },
+      "unlock": {
+        "name": "Unlock connector"
+      },
+      "firmware_check": {
+        "name": "Check firmware update"
+      },
+      "firmware_install": {
+        "name": "Install firmware update"
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "Connector status"
+      },
+      "power": {
+        "name": "Charging power"
+      },
+      "energy": {
+        "name": "Session energy"
+      },
+      "duration": {
+        "name": "Session duration"
+      },
+      "amount": {
+        "name": "Session cost"
+      },
+      "session_status": {
+        "name": "Session status"
+      },
+      "firmware_version": {
+        "name": "Firmware version"
+      },
+      "last_month_energy_kwh": {
+        "name": "Previous month energy"
+      },
+      "firmware_update": {
+        "name": "Firmware update",
+        "state": {
+          "available": "Available",
+          "installing": "Installing"
+        }
+      }
+    }
+  }
+}
