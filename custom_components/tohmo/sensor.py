@@ -30,6 +30,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
 class ChargerSensor(TohmoEntity, SensorEntity):
     def __init__(self, coordinator, point_id, key, **kwargs):
         super().__init__(coordinator, point_id, key, **kwargs)
+        self._attr_native_unit_of_measurement = None
         if key in SENSORS:
             self._attr_device_class, self._attr_native_unit_of_measurement, self._attr_state_class = SENSORS[key]
         elif key in {"firmware_version", "firmware_update"}:
