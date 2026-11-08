@@ -10,6 +10,9 @@ JSON requests identify the official public mobile client. The embedded OAuth
 client identifier/secret are shared app constants, not account credentials.
 Password and refresh grants use `POST /app/oauth/token`. User passwords are not
 persisted. Home Assistant stores access/refresh tokens in its local config entry.
+The integration repository is intended for public Marketplace distribution;
+personal account snapshots and credentials are never included. The public app
+client constants do not grant access without the user's own account credentials.
 
 ## Implemented charger controls
 
@@ -92,4 +95,5 @@ tokens are persisted immediately. HTTP 429 pauses further calls for Retry-After.
 - [Home Assistant config flow](https://contributors.home-assistant.io/core/integrations/config-flow/)
 - [Home Assistant reauthentication](https://contributors.home-assistant.io/core/integrations/reauth-reconfigure/)
 - [Home Assistant fetching data](https://contributors.home-assistant.io/core/integrations/fetching-data/)
-- [HACS publication prerequisites](https://hacs.dev/docs/publish/start/): private repositories are not supported by HACS.
+- [Marketplace installation](https://www.home-assistant.io/integrations/marketplace/): add the public repository URL as a custom integration.
+- [Marketplace repository requirements](https://contributors.home-assistant.io/marketplace/reference/repository-structure/)

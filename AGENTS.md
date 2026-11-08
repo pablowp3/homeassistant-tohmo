@@ -2,8 +2,9 @@
 
 Read `docs/API.md` and `docs/HANDOFF.md` before changing behavior.
 
-- Repository is private. Keep account credentials, tokens and personal account
-  snapshots out of commits, issues, logs and test fixtures.
+- The user authorized public distribution for Marketplace installation. Keep
+  account credentials, tokens, personal identifiers and account snapshots out of
+  commits, issues, logs and test fixtures. Public code must contain no user data.
 - `const.py` contains shared public mobile-client identification from the official
   APK; it is not a user credential. Do not replace it with account tokens.
 - Derive endpoint verbs and payloads from evidence. Whitelist supported settings.

@@ -25,16 +25,27 @@ Session energy is per session, not a lifetime energy meter.
 The app offers LED values 5/20/50. An existing value such as 100 is displayed
 unchanged; selecting another preset does not promise the app can restore 100.
 
-## Install this private repository
+## Install through Marketplace
 
-Private repositories are not supported by HACS/Marketplace. Install manually:
+The repository is published for public installation and contains no user account
+data. Add it as a custom repository; inclusion in the default catalog is not
+required. See the [official Marketplace guide](https://www.home-assistant.io/integrations/marketplace/).
 
-1. Download the repository while signed in to the authorized GitHub account.
-2. Copy `custom_components/tohmo` into Home Assistant's
-   `/config/custom_components/tohmo` directory.
-3. Restart Home Assistant.
+1. Open **Settings → Marketplace → Add from link**.
+2. Enter `https://github.com/pablowp3/homeassistant-tohmo` and select
+   **Integration** if asked for its category.
+3. Open **Tohmo**, install it, then restart Home Assistant when prompted.
 4. Open **Settings → Devices & services → Add integration → Tohmo**.
 5. Enter the email/password from the Tohmo Android app.
+
+On older Home Assistant versions with HACS, add the same URL under
+**Custom repositories**, category **Integration**, then download it and restart.
+
+### Manual alternative
+
+Download the repository and copy `custom_components/tohmo` into Home Assistant's
+`/config/custom_components/tohmo` directory. Restart Home Assistant, then complete
+steps 4–5 above.
 
 The password is used once and is not saved. Access and refresh tokens are stored
 in Home Assistant's config entry and are renewed automatically. If Tohmo revokes

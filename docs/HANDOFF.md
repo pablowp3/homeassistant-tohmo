@@ -22,11 +22,23 @@ range 6–16 A, connector lock, LED adjustment and firmware updates. Tenant smar
 charging, sharing, reimbursement and AxleFlex are not enabled for this charger.
 The active session was suspended at zero power, which is still an active session.
 
+## Publication and validation status
+
+Source review is complete. The reviewer independently reran all 28 mocked tests
+and Python compilation successfully. Initial source was published to
+`pablowp3/homeassistant-tohmo` in commit
+`e4e5c7994eefd74d21fcd9eab9ab3b709697eeda`.
+
+The user subsequently authorized making the repository public so Marketplace can
+install it. The coordinator owns the visibility change and publication of these
+updated instructions. No credentials or personal account responses belong in
+the public repository. Preferred installation is Marketplace **Add from link**;
+manual copying remains a fallback.
+
 ## Remaining validation
 
-1. Source review is complete. The reviewer independently reran all 28 mocked
-   tests and Python compilation successfully. Private GitHub publication and
-   Home Assistant installation are next; neither is claimed complete here.
+1. Complete public visibility and documentation publication, then install through
+   Marketplace as an Integration from `https://github.com/pablowp3/homeassistant-tohmo`.
 2. Load on actual Home Assistant 2026.11, then enter account credentials in its
    UI. The local tests do not install or emulate the complete Home Assistant core.
 3. Verify discovered entities and values against the mobile app. Check firmware
@@ -55,4 +67,5 @@ or real charger requests.
 - [Config flow](https://contributors.home-assistant.io/core/integrations/config-flow/)
 - [Reauthentication](https://contributors.home-assistant.io/core/integrations/reauth-reconfigure/)
 - [Coordinator data fetching](https://contributors.home-assistant.io/core/integrations/fetching-data/)
-- [Private repository limitation](https://contributors.home-assistant.io/marketplace/reference/repository-structure/)
+- [Marketplace installation](https://www.home-assistant.io/integrations/marketplace/)
+- [Repository requirements](https://contributors.home-assistant.io/marketplace/reference/repository-structure/)
